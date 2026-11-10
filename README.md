@@ -34,6 +34,6 @@ The `LibraryStore` class in `app.js` uses JavaScript `Map` instances as hash map
 
 These indexes make ID and ISBN lookups average O(1). Relationship indexes avoid scanning every loan to count a member's active books or calculate a book's availability. A JSON snapshot of the records is serialized to local storage on each change; `Map` indexes are rebuilt at startup.
 
-## Git setup
+## GitHub
 
-This folder is a standalone Git repository. To connect it to your GitHub or other Git host, add the repository URL as `origin`, then push the `main` branch.
+The project is published at [sunnymagnus/LibraryManagementSystem](https://github.com/sunnymagnus/LibraryManagementSystem). To work from a fresh local checkout, run `git clone https://github.com/sunnymagnus/LibraryManagementSystem.git` and then `npm start` from the project folder.
