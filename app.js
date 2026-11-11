@@ -1,6 +1,6 @@
 /* Shelfwise's in-memory repository uses JavaScript Map hash tables. The localStorage
    snapshot is only persistence; normal lookups and relationships use Map indexes. */
-const STORE_KEY = 'shelfwise-library-v2-india';
+const STORE_KEY = 'shelfwise-library-v3-india';
 const DEMO_PIN_SALT = 'shelfwise-demo';
 const DEMO_PIN_HASH = 'ca8a6fb184a9644dc6bc665a961d75dfcbc4e556374ac2b6c35ab9b0f497d4bb';
 const LATE_FINE_PER_DAY = 5;
@@ -40,7 +40,27 @@ const demo = () => ({
     {id:'B-1027',isbn:'9780143335941',title:'How I Taught My Grandmother to Read',author:'Sudha Murty',genre:'Children’s literature',year:2004,copies:5,location:'IN-04-02',color:2,popularity:23},
     {id:'B-1028',isbn:'9780143418767',title:'I Too Had a Love Story',author:'Ravinder Singh',genre:'Romance',year:2008,copies:4,location:'IN-04-03',color:3,popularity:15},
     {id:'B-1029',isbn:'9789380658797',title:'The Secret of the Nagas',author:'Amish Tripathi',genre:'Mythology',year:2011,copies:4,location:'IN-04-04',color:0,popularity:21},
-    {id:'B-1030',isbn:'9780060786526',title:'A Suitable Boy',author:'Vikram Seth',genre:'Romance',year:1993,copies:3,location:'IN-04-05',color:1,popularity:13}
+    {id:'B-1030',isbn:'9780060786526',title:'A Suitable Boy',author:'Vikram Seth',genre:'Romance',year:1993,copies:3,location:'IN-04-05',color:1,popularity:13},
+    {id:'B-1031',isbn:'9780143420493',title:'The Covenant of Water',author:'Abraham Verghese',genre:'Historical fiction',year:2023,copies:4,location:'IN-05-01',color:2,popularity:19},
+    {id:'B-1032',isbn:'9780143420196',title:'The Ministry of Utmost Happiness',author:'Arundhati Roy',genre:'Literary fiction',year:2017,copies:3,location:'IN-05-02',color:3,popularity:16},
+    {id:'B-1033',isbn:'9780143335477',title:'The Room on the Roof',author:'Ruskin Bond',genre:'Children’s literature',year:1956,copies:4,location:'IN-05-03',color:0,popularity:14},
+    {id:'B-1034',isbn:'9780143039686',title:'Hullabaloo in the Guava Orchard',author:'Kiran Desai',genre:'Literary fiction',year:1998,copies:2,location:'IN-05-04',color:1,popularity:10},
+    {id:'B-1035',isbn:'9780143103249',title:'The Hungry Tide',author:'Amitav Ghosh',genre:'Literary fiction',year:2004,copies:4,location:'IN-05-05',color:2,popularity:15},
+    {id:'B-1036',isbn:'9780143038412',title:'Sea of Poppies',author:'Amitav Ghosh',genre:'Historical fiction',year:2008,copies:3,location:'IN-06-01',color:3,popularity:13},
+    {id:'B-1037',isbn:'9780143066651',title:'Interpreter of Maladies',author:'Jhumpa Lahiri',genre:'Literary fiction',year:1999,copies:2,location:'IN-06-02',color:0,popularity:17},
+    {id:'B-1038',isbn:'9780143103355',title:'The Shadow Lines',author:'Amitav Ghosh',genre:'Literary fiction',year:1988,copies:4,location:'IN-06-03',color:1,popularity:12},
+    {id:'B-1039',isbn:'9780143422350',title:'The Forest of Enchantments',author:'Chitra Banerjee Divakaruni',genre:'Mythology',year:2019,copies:4,location:'IN-06-04',color:2,popularity:20},
+    {id:'B-1040',isbn:'9780143418859',title:'The Oath of the Vayuputras',author:'Amish Tripathi',genre:'Mythology',year:2013,copies:4,location:'IN-06-05',color:3,popularity:18},
+    {id:'B-1041',isbn:'9780143333169',title:'The Room on the Roof',author:'Ruskin Bond',genre:'Indian fiction',year:1956,copies:2,location:'IN-07-01',color:0,popularity:11},
+    {id:'B-1042',isbn:'9780143102389',title:'A Fine Balance',author:'Rohinton Mistry',genre:'Historical fiction',year:1995,copies:4,location:'IN-07-02',color:1,popularity:16},
+    {id:'B-1043',isbn:'9780143105494',title:'Family Matters',author:'Rohinton Mistry',genre:'Literary fiction',year:2002,copies:3,location:'IN-07-03',color:2,popularity:9},
+    {id:'B-1044',isbn:'9780143102198',title:'The Glass Palace',author:'Amitav Ghosh',genre:'Historical fiction',year:2000,copies:3,location:'IN-07-04',color:3,popularity:11},
+    {id:'B-1045',isbn:'9780143102891',title:'The Calcutta Chromosome',author:'Amitav Ghosh',genre:'Science',year:1995,copies:3,location:'IN-07-05',color:0,popularity:8},
+    {id:'B-1046',isbn:'9780143039556',title:'The Lowland',author:'Jhumpa Lahiri',genre:'Literary fiction',year:2013,copies:3,location:'IN-08-01',color:1,popularity:12},
+    {id:'B-1047',isbn:'9780143332902',title:'The Adventures of Feluda',author:'Satyajit Ray',genre:'Mystery',year:1970,copies:4,location:'IN-08-02',color:2,popularity:16},
+    {id:'B-1048',isbn:'9780143334708',title:'The Blue Umbrella',author:'Ruskin Bond',genre:'Children’s literature',year:1980,copies:2,location:'IN-08-03',color:3,popularity:7},
+    {id:'B-1049',isbn:'9780143039662',title:'The Great Indian Novel',author:'Shashi Tharoor',genre:'Satire',year:1989,copies:2,location:'IN-08-04',color:0,popularity:10},
+    {id:'B-1050',isbn:'9780143039594',title:'The Argumentative Indian',author:'Amartya Sen',genre:'History',year:2005,copies:3,location:'IN-08-05',color:1,popularity:13}
   ],
   members: [
     {id:'M-2041',name:'Ananya Rao',email:'ananya.rao@example.in',phone:'+91 98765 10421',joined:shiftDate(-250),status:'Active',pinSalt:DEMO_PIN_SALT,pinHash:DEMO_PIN_HASH},
@@ -139,6 +159,6 @@ $('add-book').onclick=()=>bookForm();$('add-member').onclick=()=>memberForm();$(
 $('book-search').addEventListener('input',renderBooks);$('genre-filter').addEventListener('change',renderBooks);$('book-filter').addEventListener('change',renderBooks);$('member-search').addEventListener('input',renderMembers);$('loan-search').addEventListener('input',renderLoans);$('loan-filter').addEventListener('change',renderLoans);
 $('global-search').addEventListener('keydown',e=>{if(e.key==='Enter'){globalSearch(e.target.value);e.target.blur();}});document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('global-search').focus();}});
 document.addEventListener('click',e=>{const button=e.target.closest('[data-action]');if(!button)return;const {action,id}=button.dataset;try{switch(action){case'checkout-book':if(currentMember())checkoutForm({bookId:id,memberId:currentMember().id});else loginForm({bookId:id});break;case'hold-book':if(currentMember())checkoutForm({bookId:id,memberId:currentMember().id,hold:true});else loginForm({bookId:id,hold:true});break;case'account-login':loginForm();break;case'browse-books':navigate('books');break;case'fulfill-hold':{const hold=state.holds.find(h=>h.id===id);if(hold)checkoutForm({bookId:hold.bookId,memberId:hold.memberId,holdId:id});break;}case'edit-book':bookForm(state.books.get(id));break;case'delete-book':if(confirm('Remove this book from the catalog?')){state.deleteBook(id);render();toast('Book removed.');}break;case'edit-member':memberForm(state.members.get(id));break;case'member-checkout':checkoutForm({memberId:id});break;case'delete-member':if(confirm('Remove this member? Members with loan history cannot be removed.')){state.deleteMember(id);render();toast('Member removed.');}break;case'return-loan':state.returnLoan(id);render();{const loan=state.loans.get(id);toast(loan.fineAmount?`Book returned. Late fine: ${formatRupees(loan.fineAmount)}.`:'Book returned. No late fine.');}break;case'cancel-hold':state.cancelHold(id);render();toast('Hold request removed.');break;}}catch(err){toast(err.message,true);}});
-$('help-button').onclick=()=>{openModal({title:'How this library works',description:'Borrow books and keep track of due dates.',fields:[],submit:'Done',onSubmit:()=>{}});$('modal-fields').innerHTML=`<div class="help-box field full">Browse or search the 30-book catalog by title, author, ISBN, or category.<br><br>Sign in with your member email and PIN to borrow a book and see its return-by date in My account.<br><br>Books are due in 14 days. Late fees are ₹${LATE_FINE_PER_DAY} per day, calculated when the book is returned.<br><br>Demo login: ananya.rao@example.in · PIN 1234.<br><br>Your demo account data stays in this browser on this device.</div>`;};
+$('help-button').onclick=()=>{openModal({title:'How this library works',description:'Borrow books and keep track of due dates.',fields:[],submit:'Done',onSubmit:()=>{}});$('modal-fields').innerHTML=`<div class="help-box field full">Browse or search the 50-book catalog by title, author, ISBN, or category.<br><br>Sign in with your member email and PIN to borrow a book and see its return-by date in My account.<br><br>Books are due in 14 days. Late fees are ₹${LATE_FINE_PER_DAY} per day, calculated when the book is returned.<br><br>Demo login: ananya.rao@example.in · PIN 1234.<br><br>Your demo account data stays in this browser on this device.</div>`;};
 const day=new Date().toLocaleDateString('en-IN',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toUpperCase();document.querySelector('.welcome-row .eyebrow').innerHTML=`<span class="sparkle">✳</span> ${day}`;
 render();
