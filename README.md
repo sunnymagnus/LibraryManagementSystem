@@ -1,6 +1,6 @@
 # Shelfwise Library Desk
 
-A local-first library management system for a community library. It runs on Node.js with no third-party packages and stores its working data in the browser's local storage.
+A local-first library management system for a community library in India. It runs on Node.js with no third-party packages and stores its working data in the browser's local storage.
 
 ## Run locally
 
@@ -8,17 +8,27 @@ A local-first library management system for a community library. It runs on Node
 2. From this folder, run `npm start`.
 3. Open [http://localhost:4173](http://localhost:4173).
 
-Set `PORT` to use a different port. The demo catalog appears on first launch. Changes are saved in the browser on the device where they were made. Use a dedicated browser profile or the app's site data controls to reset the demonstration data.
+Set `PORT` to use a different port. The Indian demo catalog appears on first launch. Changes are saved in the browser on the device where they were made. Use a dedicated browser profile or the app's site data controls to reset the demonstration data.
 
 ## Features
 
-- Catalog management: add, edit, search, filter, and remove books; track copies and shelf locations.
-- Member management: add and edit readers, maintain active or inactive status, and see current borrowing counts.
-- Circulation: check out and return books, enforce availability and a five-book member limit, and calculate the due date 14 days from checkout.
-- Holds: place a hold when all copies are borrowed, show the waiting queue, and mark the next request ready when a copy is returned.
-- Overview: collection and circulation counts, recent activity, overdue reminders, holds needing attention, and popular titles.
-- Estimated overdue fine display of $0.25 per overdue day.
+- Browse 30 seeded titles, including Indian authors; search by title, author, ISBN, or category; filter by category and availability; add more titles and shelf locations.
+- Reader sign-in with a registered email and PIN. Members can borrow available books, see due dates, and return books from My account.
+- Member management: create reader profiles and PINs, edit accounts, set active or inactive status, and see current borrowing counts.
+- Circulation: check out and return books, enforce availability and a five-book member limit, and set the return date 14 days after checkout.
+- Holds: queue a request for borrowed books and reserve the next available copy for its reader.
+- Late fee of ₹5 per day, shown in the member's account and recorded when an overdue book is returned.
+- Overview with collection and circulation counts, recent activity, overdue reminders, and popular titles.
 - Responsive layout for desktop and mobile screens.
+
+## Demo sign-in
+
+- Email: `ananya.rao@example.in`
+- PIN: `1234`
+
+Other seeded members use the same demo PIN. New members receive a 4–8 digit PIN from the library desk when their account is created.
+
+This is a browser-local demo. Member data and sign-in are not backed by a shared server, so use server-side authentication and a database before exposing the system to the public internet.
 
 ## Hash map data model
 
