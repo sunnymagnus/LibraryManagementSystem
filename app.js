@@ -1,6 +1,6 @@
 /* Shelfwise's in-memory repository uses JavaScript Map hash tables. The localStorage
    snapshot is only persistence; normal lookups and relationships use Map indexes. */
-const STORE_KEY = 'shelfwise-library-v3-india';
+const STORE_KEY = 'shelfwise-library-v4-india';
 const DEMO_PIN_SALT = 'shelfwise-demo';
 const DEMO_PIN_HASH = 'ca8a6fb184a9644dc6bc665a961d75dfcbc4e556374ac2b6c35ab9b0f497d4bb';
 const LATE_FINE_PER_DAY = 5;
@@ -60,7 +60,57 @@ const demo = () => ({
     {id:'B-1047',isbn:'9780143332902',title:'The Adventures of Feluda',author:'Satyajit Ray',genre:'Mystery',year:1970,copies:4,location:'IN-08-02',color:2,popularity:16},
     {id:'B-1048',isbn:'9780143334708',title:'The Blue Umbrella',author:'Ruskin Bond',genre:'Children’s literature',year:1980,copies:2,location:'IN-08-03',color:3,popularity:7},
     {id:'B-1049',isbn:'9780143039662',title:'The Great Indian Novel',author:'Shashi Tharoor',genre:'Satire',year:1989,copies:2,location:'IN-08-04',color:0,popularity:10},
-    {id:'B-1050',isbn:'9780143039594',title:'The Argumentative Indian',author:'Amartya Sen',genre:'History',year:2005,copies:3,location:'IN-08-05',color:1,popularity:13}
+    {id:'B-1050',isbn:'9780143039594',title:'The Argumentative Indian',author:'Amartya Sen',genre:'History',year:2005,copies:3,location:'IN-08-05',color:1,popularity:13},
+    {id:'B-1051',isbn:'9780143420493',title:'The Covenant of Water',author:'Abraham Verghese',genre:'Literary fiction',year:2023,copies:3,location:'IN-09-01',color:0,popularity:12},
+    {id:'B-1052',isbn:'9780143420196',title:'The Ministry of Utmost Happiness',author:'Arundhati Roy',genre:'Literary fiction',year:2017,copies:4,location:'IN-09-02',color:1,popularity:16},
+    {id:'B-1053',isbn:'9780143335477',title:'The Room on the Roof',author:'Ruskin Bond',genre:'Children’s literature',year:1956,copies:4,location:'IN-09-03',color:2,popularity:14},
+    {id:'B-1054',isbn:'9780143039686',title:'Hullabaloo in the Guava Orchard',author:'Kiran Desai',genre:'Fiction',year:1998,copies:2,location:'IN-09-04',color:3,popularity:9},
+    {id:'B-1055',isbn:'9780143103249',title:'The Hungry Tide',author:'Amitav Ghosh',genre:'Literary fiction',year:2004,copies:3,location:'IN-09-05',color:0,popularity:13},
+    {id:'B-1056',isbn:'9780143038412',title:'Sea of Poppies',author:'Amitav Ghosh',genre:'Historical fiction',year:2008,copies:3,location:'IN-10-01',color:1,popularity:12},
+    {id:'B-1057',isbn:'9780143066651',title:'Interpreter of Maladies',author:'Jhumpa Lahiri',genre:'Literary fiction',year:1999,copies:2,location:'IN-10-02',color:2,popularity:15},
+    {id:'B-1058',isbn:'9780143103355',title:'The Shadow Lines',author:'Amitav Ghosh',genre:'Literary fiction',year:1988,copies:3,location:'IN-10-03',color:3,popularity:11},
+    {id:'B-1059',isbn:'9780143422350',title:'The Forest of Enchantments',author:'Chitra Banerjee Divakaruni',genre:'Mythology',year:2019,copies:4,location:'IN-10-04',color:0,popularity:17},
+    {id:'B-1060',isbn:'9780143418859',title:'The Oath of the Vayuputras',author:'Amish Tripathi',genre:'Mythology',year:2013,copies:4,location:'IN-10-05',color:1,popularity:18},
+    {id:'B-1061',isbn:'9780143102389',title:'A Fine Balance',author:'Rohinton Mistry',genre:'Historical fiction',year:1995,copies:3,location:'IN-11-01',color:2,popularity:15},
+    {id:'B-1062',isbn:'9780143105494',title:'Family Matters',author:'Rohinton Mistry',genre:'Literary fiction',year:2002,copies:2,location:'IN-11-02',color:3,popularity:9},
+    {id:'B-1063',isbn:'9780143102198',title:'The Glass Palace',author:'Amitav Ghosh',genre:'Historical fiction',year:2000,copies:3,location:'IN-11-03',color:0,popularity:12},
+    {id:'B-1064',isbn:'9780143102891',title:'The Calcutta Chromosome',author:'Amitav Ghosh',genre:'Science',year:1995,copies:2,location:'IN-11-04',color:1,popularity:8},
+    {id:'B-1065',isbn:'9780143039556',title:'The Lowland',author:'Jhumpa Lahiri',genre:'Literary fiction',year:2013,copies:3,location:'IN-11-05',color:2,popularity:13},
+    {id:'B-1066',isbn:'9780143332902',title:'The Adventures of Feluda',author:'Satyajit Ray',genre:'Mystery',year:1970,copies:4,location:'IN-12-01',color:3,popularity:16},
+    {id:'B-1067',isbn:'9780143334708',title:'The Blue Umbrella',author:'Ruskin Bond',genre:'Children’s literature',year:1980,copies:3,location:'IN-12-02',color:0,popularity:13},
+    {id:'B-1068',isbn:'9780143039662',title:'The Great Indian Novel',author:'Shashi Tharoor',genre:'Satire',year:1989,copies:2,location:'IN-12-03',color:1,popularity:11},
+    {id:'B-1069',isbn:'9780143039687',title:'The Argumentative Indian: Writings on Indian History, Culture and Identity',author:'Amartya Sen',genre:'History',year:2005,copies:3,location:'IN-12-04',color:2,popularity:12},
+    {id:'B-1070',isbn:'9780143420455',title:'The Last Queen',author:'Chitra Banerjee Divakaruni',genre:'Historical fiction',year:2021,copies:4,location:'IN-12-05',color:3,popularity:17},
+    {id:'B-1071',isbn:'9780143422794',title:'The Twentieth Wife',author:'Indu Sundaresan',genre:'Historical fiction',year:2002,copies:3,location:'IN-13-01',color:0,popularity:12},
+    {id:'B-1072',isbn:'9780143422800',title:'The Feast of Roses',author:'Indu Sundaresan',genre:'Historical fiction',year:2003,copies:3,location:'IN-13-02',color:1,popularity:11},
+    {id:'B-1073',isbn:'9780143422817',title:'Shadow Princess',author:'Indu Sundaresan',genre:'Historical fiction',year:2010,copies:2,location:'IN-13-03',color:2,popularity:10},
+    {id:'B-1074',isbn:'9780143039693',title:'The Zoya Factor',author:'Anuja Chauhan',genre:'Romance',year:2008,copies:3,location:'IN-13-04',color:3,popularity:13},
+    {id:'B-1075',isbn:'9780143420936',title:'Those Pricey Thakur Girls',author:'Anuja Chauhan',genre:'Romance',year:2013,copies:3,location:'IN-13-05',color:0,popularity:15},
+    {id:'B-1076',isbn:'9780143039731',title:'The Immortals',author:'Amit Chaudhuri',genre:'Literary fiction',year:2009,copies:2,location:'IN-14-01',color:1,popularity:9},
+    {id:'B-1077',isbn:'9780143039670',title:'English, August',author:'Upamanyu Chatterjee',genre:'Satire',year:1988,copies:3,location:'IN-14-02',color:2,popularity:11},
+    {id:'B-1078',isbn:'9780143039700',title:'The Last Burden',author:'Upamanyu Chatterjee',genre:'Literary fiction',year:1993,copies:2,location:'IN-14-03',color:3,popularity:8},
+    {id:'B-1079',isbn:'9780143039724',title:'The Golden Gate',author:'Vikram Seth',genre:'Poetry',year:1986,copies:2,location:'IN-14-04',color:0,popularity:10},
+    {id:'B-1080',isbn:'9780143039748',title:'The Moor’s Last Sigh',author:'Salman Rushdie',genre:'Literary fiction',year:1995,copies:3,location:'IN-14-05',color:1,popularity:11},
+    {id:'B-1081',isbn:'9780143039762',title:'Midnight’s Children',author:'Salman Rushdie',genre:'Historical fiction',year:1981,copies:4,location:'IN-15-01',color:2,popularity:18},
+    {id:'B-1082',isbn:'9780143039779',title:'The Enchantress of Florence',author:'Salman Rushdie',genre:'Fantasy',year:2008,copies:2,location:'IN-15-02',color:3,popularity:10},
+    {id:'B-1083',isbn:'9780143039816',title:'The Circle of Reason',author:'Amitav Ghosh',genre:'Literary fiction',year:1986,copies:2,location:'IN-15-03',color:0,popularity:8},
+    {id:'B-1084',isbn:'9780143039830',title:'In an Antique Land',author:'Amitav Ghosh',genre:'History',year:1992,copies:2,location:'IN-15-04',color:1,popularity:9},
+    {id:'B-1085',isbn:'9780143039847',title:'The Great Derangement',author:'Amitav Ghosh',genre:'Science',year:2016,copies:2,location:'IN-15-05',color:2,popularity:10},
+    {id:'B-1086',isbn:'9780143039854',title:'Serious Men',author:'Manu Joseph',genre:'Satire',year:2010,copies:3,location:'IN-16-01',color:3,popularity:12},
+    {id:'B-1087',isbn:'9780143039861',title:'The Illicit Happiness of Other People',author:'Manu Joseph',genre:'Fiction',year:2012,copies:2,location:'IN-16-02',color:0,popularity:9},
+    {id:'B-1088',isbn:'9780143039878',title:'The Association of Small Bombs',author:'Karan Mahajan',genre:'Literary fiction',year:2016,copies:2,location:'IN-16-03',color:1,popularity:10},
+    {id:'B-1089',isbn:'9780143039885',title:'The Far Field',author:'Madhuri Vijay',genre:'Literary fiction',year:2019,copies:2,location:'IN-16-04',color:2,popularity:11},
+    {id:'B-1090',isbn:'9780143039892',title:'A Burning',author:'Megha Majumdar',genre:'Literary fiction',year:2020,copies:3,location:'IN-16-05',color:3,popularity:13},
+    {id:'B-1091',isbn:'9780143039908',title:'The White Tiger',author:'Aravind Adiga',genre:'Literary fiction',year:2008,copies:2,location:'IN-17-01',color:0,popularity:12},
+    {id:'B-1092',isbn:'9780143039915',title:'The God of Small Things',author:'Arundhati Roy',genre:'Literary fiction',year:1997,copies:2,location:'IN-17-02',color:1,popularity:13},
+    {id:'B-1093',isbn:'9780143039922',title:'Malgudi Days',author:'R. K. Narayan',genre:'Indian fiction',year:1943,copies:3,location:'IN-17-03',color:2,popularity:14},
+    {id:'B-1094',isbn:'9780143039939',title:'The Guide',author:'R. K. Narayan',genre:'Indian fiction',year:1958,copies:2,location:'IN-17-04',color:3,popularity:11},
+    {id:'B-1095',isbn:'9780143039946',title:'Gitanjali',author:'Rabindranath Tagore',genre:'Poetry',year:1910,copies:2,location:'IN-17-05',color:0,popularity:10},
+    {id:'B-1096',isbn:'9780143039953',title:'The Blue Umbrella',author:'Ruskin Bond',genre:'Children’s literature',year:1980,copies:3,location:'IN-18-01',color:1,popularity:12},
+    {id:'B-1097',isbn:'9780143039960',title:'Wings of Fire',author:'A. P. J. Abdul Kalam',genre:'Memoir',year:1999,copies:3,location:'IN-18-02',color:2,popularity:16},
+    {id:'B-1098',isbn:'9780143039977',title:'The Discovery of India',author:'Jawaharlal Nehru',genre:'History',year:1946,copies:2,location:'IN-18-03',color:3,popularity:10},
+    {id:'B-1099',isbn:'9780143039984',title:'Train to Pakistan',author:'Khushwant Singh',genre:'Historical fiction',year:1956,copies:2,location:'IN-18-04',color:0,popularity:11},
+    {id:'B-1100',isbn:'9780143039991',title:'The Palace of Illusions',author:'Chitra Banerjee Divakaruni',genre:'Mythology',year:2008,copies:3,location:'IN-18-05',color:1,popularity:14}
   ],
   members: [
     {id:'M-2041',name:'Ananya Rao',email:'ananya.rao@example.in',phone:'+91 98765 10421',joined:shiftDate(-250),status:'Active',pinSalt:DEMO_PIN_SALT,pinHash:DEMO_PIN_HASH},
@@ -111,7 +161,7 @@ class LibraryStore {
   placeHold(bookId,memberId) { const b=this.books.get(bookId),m=this.members.get(memberId);if(!b||!m)throw Error('Choose a valid book and member.');if(this.available(b)>0)throw Error('This book has copies available. Start a checkout instead.');if(this.holds.some(h=>h.bookId===bookId&&h.memberId===memberId&&h.status==='Waiting'))throw Error('This member is already in the hold queue.');const h={id:makeId('H'),bookId,memberId,createdAt:isoNow(),status:'Waiting'};this.holds.push(h);this.addIndex(this.holdsByBook,bookId,h.id);this.event('hold',`${m.name} joined the hold queue for ${b.title}`,h.id);this.save(); }
   cancelHold(id) {const h=this.holds.find(x=>x.id===id);if(!h)return;this.holds=this.holds.filter(x=>x.id!==id);this.removeIndex(this.holdsByBook,h.bookId,id);this.save();}
 }
-let state;try{const saved=localStorage.getItem(STORE_KEY);state=new LibraryStore(saved?JSON.parse(saved):demo());if(!saved)state.save();}catch(e){state=new LibraryStore(demo());}
+let state;try{const saved=localStorage.getItem(STORE_KEY);if(saved){const existing=JSON.parse(saved),known=new Set((existing.books||[]).map(book=>book.isbn));demo().books.forEach(book=>{if(!known.has(book.isbn)){existing.books.push(book);known.add(book.isbn);}});state=new LibraryStore(existing);state.save();}else{state=new LibraryStore(demo());state.save();}}catch(e){state=new LibraryStore(demo());}
 let currentMemberId=sessionStorage.getItem('shelfwise-current-member')||null;
 const currentMember=()=>state.members.get(currentMemberId)||null;
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -159,6 +209,6 @@ $('add-book').onclick=()=>bookForm();$('add-member').onclick=()=>memberForm();$(
 $('book-search').addEventListener('input',renderBooks);$('genre-filter').addEventListener('change',renderBooks);$('book-filter').addEventListener('change',renderBooks);$('member-search').addEventListener('input',renderMembers);$('loan-search').addEventListener('input',renderLoans);$('loan-filter').addEventListener('change',renderLoans);
 $('global-search').addEventListener('keydown',e=>{if(e.key==='Enter'){globalSearch(e.target.value);e.target.blur();}});document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('global-search').focus();}});
 document.addEventListener('click',e=>{const button=e.target.closest('[data-action]');if(!button)return;const {action,id}=button.dataset;try{switch(action){case'checkout-book':if(currentMember())checkoutForm({bookId:id,memberId:currentMember().id});else loginForm({bookId:id});break;case'hold-book':if(currentMember())checkoutForm({bookId:id,memberId:currentMember().id,hold:true});else loginForm({bookId:id,hold:true});break;case'account-login':loginForm();break;case'browse-books':navigate('books');break;case'fulfill-hold':{const hold=state.holds.find(h=>h.id===id);if(hold)checkoutForm({bookId:hold.bookId,memberId:hold.memberId,holdId:id});break;}case'edit-book':bookForm(state.books.get(id));break;case'delete-book':if(confirm('Remove this book from the catalog?')){state.deleteBook(id);render();toast('Book removed.');}break;case'edit-member':memberForm(state.members.get(id));break;case'member-checkout':checkoutForm({memberId:id});break;case'delete-member':if(confirm('Remove this member? Members with loan history cannot be removed.')){state.deleteMember(id);render();toast('Member removed.');}break;case'return-loan':state.returnLoan(id);render();{const loan=state.loans.get(id);toast(loan.fineAmount?`Book returned. Late fine: ${formatRupees(loan.fineAmount)}.`:'Book returned. No late fine.');}break;case'cancel-hold':state.cancelHold(id);render();toast('Hold request removed.');break;}}catch(err){toast(err.message,true);}});
-$('help-button').onclick=()=>{openModal({title:'How this library works',description:'Borrow books and keep track of due dates.',fields:[],submit:'Done',onSubmit:()=>{}});$('modal-fields').innerHTML=`<div class="help-box field full">Browse or search the 50-book catalog by title, author, ISBN, or category.<br><br>Sign in with your member email and PIN to borrow a book and see its return-by date in My account.<br><br>Books are due in 14 days. Late fees are ₹${LATE_FINE_PER_DAY} per day, calculated when the book is returned.<br><br>Demo login: ananya.rao@example.in · PIN 1234.<br><br>Your demo account data stays in this browser on this device.</div>`;};
+$('help-button').onclick=()=>{openModal({title:'How this library works',description:'Borrow books and keep track of due dates.',fields:[],submit:'Done',onSubmit:()=>{}});$('modal-fields').innerHTML=`<div class="help-box field full">Browse or search the 100-book catalog by title, author, ISBN, or category.<br><br>Sign in with your member email and PIN to borrow a book and see its return-by date in My account.<br><br>Books are due in 14 days. Late fees are ₹${LATE_FINE_PER_DAY} per day, calculated when the book is returned.<br><br>Demo login: ananya.rao@example.in · PIN 1234.<br><br>Your demo account data stays in this browser on this device.</div>`;};
 const day=new Date().toLocaleDateString('en-IN',{weekday:'long',month:'long',day:'numeric',year:'numeric'}).toUpperCase();document.querySelector('.welcome-row .eyebrow').innerHTML=`<span class="sparkle">✳</span> ${day}`;
 render();
