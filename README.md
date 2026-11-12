@@ -12,7 +12,7 @@ Set `PORT` to use a different port. The Indian demo catalog appears on first lau
 
 ## Features
 
-- Browse 50 seeded titles, including Indian authors; search by title, author, ISBN, or category; filter by category and availability; add more titles and shelf locations.
+- Browse 100 seeded titles, including Indian authors; search by title, author, ISBN, or category; filter by category and availability; add more titles and shelf locations.
 - Reader sign-in with a registered email and PIN. Members can borrow available books, see due dates, and return books from My account.
 - Member management: create reader profiles and PINs, edit accounts, set active or inactive status, and see current borrowing counts.
 - Circulation: check out and return books, enforce availability and a five-book member limit, and set the return date 14 days after checkout.
